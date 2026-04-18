@@ -2,17 +2,6 @@
 
 PostgreSQL queries for analysing user purchase funnel behaviour from the `user_events` table, covering stage drop-off, traffic source performance, time-to-conversion, and revenue metrics.
 
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Schema](#schema)
-- [Queries](#queries)
-- [Key Findings](#key-findings)
-- [Recommendations](#recommendations)
-- [Usage](#usage)
-- [Requirements](#requirements)
 
 ---
 
@@ -108,22 +97,3 @@ Summarises revenue performance across the full visitor base.
 ### 3. Financial & Revenue
 - **Audit ad spend against AOV.** With an AOV of ~$115, set a strict Customer Acquisition Cost (CAC) ceiling of **$30–$40**. Any Social Media campaigns exceeding this CAC limit are likely loss-making on a per-transaction basis and should be paused or restructured.
 
----
-
-## Usage
-
-Run all queries sequentially from the file:
-
-```bash
-psql -U <user> -d <database> -f funnel_analysis.sql
-```
-
-Or run a single section by copying the relevant CTE block into your SQL client (DBeaver, DataGrip, psql, etc.).
-
----
-
-## Requirements
-
-- PostgreSQL 12+
-- No extensions required
-- All conversion rates use `100.0` float multiplication and `::numeric` casting to avoid integer division truncation
